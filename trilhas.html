@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilhas de Aprendizagem - Portal de Estudos Salesforce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand">Salesforce Study</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="sales-cloud.html">Sales Cloud</a>
+      <a href="service-cloud.html">Service Cloud</a>
+      <a href="marketing-cloud.html">Marketing Cloud</a>
+      <a href="financial-services-cloud.html">Financial Services</a>
+      <a href="integrations.html">Integrações</a>
+      <a href="faq.html">FAQ</a>
+      <a href="exercises.html">Exercícios</a>
+      <a href="trilhas.html" class="active">Trilhas</a>
+      <a href="certificacoes.html">Certificações</a>
+      <a href="recursos.html">Recursos</a>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Buscar no portal...">
+      <ul id="search-results"></ul>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>Trilhas de Aprendizagem</h1>
+    <p>Esta seção apresenta percursos de estudo estruturados por perfil profissional. Cada trilha organiza os conteúdos de forma progressiva (básico, intermediário, avançado) com exercícios, projetos e orientações para certificações.</p>
+
+    <div class="card">
+      <h2>Administrador Salesforce</h2>
+      <p>O administrador configura e mantém a plataforma para atender às necessidades de negócio, garantindo segurança, automação e relatórios. Ele atua como ponte entre usuários finais e tecnologia.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> conhecer a arquitetura do CRM, navegação no Lightning, criação de usuários e objetos padrão.</li>
+        <li><strong>Administração Intermediária:</strong> modelagem de dados avançada, controle de acesso (perfis, permission sets, sharing rules), automação declarativa com Flow Builder e relatórios/dashboards.</li>
+        <li><strong>Administração Avançada:</strong> técnicas de manutenção de grandes volumes de dados, integrações básicas, deployment entre sandboxes e produção, gestão de comunidades e service console.</li>
+        <li><strong>Projeto Integrador:</strong> implementação completa de um aplicativo customizado atendendo a requisitos de várias áreas, com documentação e testes.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> Administrator, Advanced Administrator, Platform App Builder.</p>
+    </div>
+
+    <div class="card">
+      <h2>Desenvolvedor Salesforce</h2>
+      <p>O desenvolvedor estende a plataforma com código (Apex, LWC) e integrações. Ele combina habilidades de programação com compreensão dos limites de governança do Salesforce.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> configurar ambiente de desenvolvimento com VS Code e CLI, aprender sintaxe Apex, triggers simples e SOQL/SOSL, criar componentes Lightning Web Components básicos.</li>
+        <li><strong>Intermediário:</strong> padrões de design em Apex, triggers em massa, serviços assíncronos (Future, Batch, Queueable), comunicação entre LWCs e chamadas a métodos Apex, desenvolvimento de APIs REST.</li>
+        <li><strong>Avançado:</strong> arquitetura de pacotes, DevOps com Salesforce DX e pipelines CI/CD, integração via Platform Events e External Services, otimização de desempenho e segurança do código.</li>
+        <li><strong>Projeto Final:</strong> construir uma aplicação full‑stack (backend Apex + frontend LWC) com integrações externas e testes completos.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> Platform Developer I, Platform Developer II, JavaScript Developer I.</p>
+    </div>
+
+    <div class="card">
+      <h2>Consultor Funcional Salesforce</h2>
+      <p>O consultor traduz processos de negócio em soluções na plataforma, configurando nuvens e conduzindo workshops com stakeholders.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> processos de vendas e atendimento com Sales e Service Cloud, personalização de page layouts, definição de processos de negócios (process builder e flows), coleta de requisitos.</li>
+        <li><strong>Intermediário:</strong> configuração de comunidades e portais (Experience Cloud), ferramentas de Field Service e CPQ, criação de relatórios avançados e dashboards, gestão de projetos ágeis.</li>
+        <li><strong>Avançado:</strong> arquiteturas multicloud envolvendo Marketing Cloud, integração com sistemas externos, blueprint de adoção e treinamento de usuários, especialização por indústria (FSC, Health Cloud).</li>
+        <li><strong>Estudo de Caso:</strong> desenhar solução de ponta a ponta para um cliente fictício envolvendo vendas, atendimento e marketing.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> Sales Cloud Consultant, Service Cloud Consultant, Experience Cloud Consultant, Field Service Consultant.</p>
+    </div>
+
+    <div class="card">
+      <h2>Analista de Marketing (Marketing Cloud)</h2>
+      <p>Especialista em automação de marketing e jornada do cliente. Utiliza Marketing Cloud e Pardot para criar campanhas multicanal e análises.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> uso do Email Studio, criação de Data Extensions, segmentação e envios básicos com personalização.</li>
+        <li><strong>Intermediário:</strong> criação de jornadas no Journey Builder, automações no Automation Studio, scripts básicos AMPscript e relatórios de engajamento.</li>
+        <li><strong>Avançado:</strong> scripting com SSJS, integração via APIs REST e SOAP, otimização de deliverability e campanhas A/B, orquestração omnicanal com Ads e Mobile.</li>
+        <li><strong>Projeto Prático:</strong> planejar e executar uma campanha completa de lançamento de produto com e‑mails, SMS e anúncios, analisando os resultados.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> Marketing Cloud Administrator, Marketing Cloud Email Specialist, Marketing Cloud Consultant, Pardot Specialist.</p>
+    </div>
+
+    <div class="card">
+      <h2>Gerente de Projetos Salesforce</h2>
+      <p>Profissional responsável por planejar, executar e entregar projetos de implementação ou evolução Salesforce, alinhando equipes e prazos.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> conceitos de gestão de projetos (PMBOK, Scrum), elaboração de plano de projeto, definição de escopo e stakeholders.</li>
+        <li><strong>Execução e Controle:</strong> condução de sprints e cerimônias, gestão de riscos e mudanças, métricas de progresso (burndown, valor agregado), coordenação de deploys.</li>
+        <li><strong>Fechamento e Governança:</strong> planejamento de UAT e go‑live, treinamento e adoção, estabelecimento de centro de excelência e ciclo de releases.</li>
+        <li><strong>Entrega Final:</strong> criação de um plano de projeto completo para implantação multicloud com cronograma e matriz de riscos.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> embora não haja certificação Salesforce específica, recomenda‑se PMP, Scrum Master, além de certs Admin/Consultor para entendimento técnico.</p>
+    </div>
+
+    <div class="card">
+      <h2>Arquiteto de Soluções Salesforce</h2>
+      <p>Responsável por projetar a arquitetura global das soluções, garantindo escalabilidade, segurança e integração entre nuvens e sistemas externos.</p>
+      <h3>Conteúdo Progressivo</h3>
+      <ul>
+        <li><strong>Fundamentos:</strong> compreender a arquitetura multi‑tenant, modelos de dados, segurança (auth, sharing, encryption) e limites de governança.</li>
+        <li><strong>Intermediário:</strong> padrões de integração (REST/SOAP, Platform Events, CDC), estratégias de dados (External Objects, Big Objects, Data Cloud), desenhos multi‑org e multi‑region, gerenciamento de identidade.</li>
+        <li><strong>Avançado:</strong> design de soluções complexas com múltiplas nuvens, estabelecimento de padrões de DevOps e governança técnica, preparação para o exame de Certified Technical Architect.</li>
+        <li><strong>Projeto de Arquitetura:</strong> desenvolver proposta de arquitetura para uma empresa global incluindo Sales, Service, Commerce e integrações via MuleSoft.</li>
+      </ul>
+      <p><strong>Certificações recomendadas:</strong> Data Architect, Sharing & Visibility, Integration Architect, System Architect, Application Architect, culminando no Certified Technical Architect.</p>
+    </div>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
