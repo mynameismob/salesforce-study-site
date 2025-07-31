@@ -26,63 +26,120 @@
     </div>
   </nav>
   <main class="container">
-    <h1>Integrações e Desenvolvimento Multi‑Cloud</h1>
-    <p>A Salesforce é uma plataforma extensível que se conecta facilmente a sistemas
-      externos. Esta seção resume os principais conceitos de integração e
-      desenvolvimento que aparecem em várias nuvens do nosso plano de estudo.</p>
+    <h1>Fundamentos da Plataforma e Integrações</h1>
+    <p>Esta seção aborda os fundamentos da plataforma Salesforce — arquitetura, dados, automação e desenvolvimento — e também apresenta padrões e ferramentas de integração. Esses conceitos são a base para trabalhar com qualquer nuvem Salesforce.</p>
 
     <div class="card">
-      <h2>APIs e Named Credentials</h2>
-      <p>Para integrar o Salesforce com outros sistemas, você pode utilizar
-        diferentes APIs (REST, SOAP, Bulk) e criar autenticações seguras via
-        Named Credentials.</p>
+      <h2>Nível Iniciante</h2>
+      <p><strong>Explicação:</strong> A plataforma Salesforce opera em um modelo multi‑tenant, onde metadados definem o comportamento da aplicação e os dados são armazenados em objetos. A segurança é gerenciada em vários níveis para garantir governança de acesso.</p>
+      <p><strong>Caso de uso:</strong> Uma consultoria precisa rastrear projetos de clientes, incluindo datas de início, término e status.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li>Use Apex para realizar callouts HTTP em classes e triggers. Sempre separe lógica de callout em classes reutilizáveis.</li>
-        <li>Configure Named Credentials para armazenar URLs e credenciais de autenticação, facilitando a manutenção e segurança.</li>
-        <li>Quando lidar com grandes volumes de dados, considere a API Bulk e os limites de consumo.</li>
+        <li>Arquitetura CRM: modelo multi‑tenant e personalização via metadados.</li>
+        <li>Objetos padrão vs custom: quando criar um objeto personalizado vs um campo personalizado.</li>
+        <li>Segurança de dados: Profiles, Permission Sets, Roles e Sharing Rules.</li>
+        <li>Navegação: Lightning Experience, App Launcher e Setup Quick Find.</li>
+      </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Criar um objeto custom Project com campos StartDate (Date), EndDate (Date), Status (Picklist: Planning, In Progress, Completed) e ClientName (Text).</li>
+        <li>Configurar o layout de página e campos obrigatórios.</li>
+        <li>Criar um perfil Project Manager e conceder permissão de leitura/gravação em Project.</li>
+        <li>Criar um usuário de teste nesse perfil e validar o acesso.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Liste três diferenças entre Profile e Permission Set. Explique o fluxo de avaliação de Sharing Rules.</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Criar uma Permission Set Read Only Project que permita apenas visualização de registros de Project.</li>
+        <li>Ajustar o layout de página para agrupar campos em seções “Informações Básicas” e “Status”.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>Padrões de Integração</h2>
-      <p>Diferentes padrões servem a diferentes casos de uso. Escolha o padrão
-        adequado considerando volume, latência e consistência.</p>
+      <h2>Nível Intermediário</h2>
+      <p><strong>Explicação:</strong> Automação declarativa e modelagem adequada de dados reduzem a necessidade de código e permitem adaptação rápida a requisitos de negócio.</p>
+      <p><strong>Caso de uso:</strong> Atualizar automaticamente o status de um projeto para Completed sete dias após o término planejado.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li><strong>Processo Batch:</strong> Exportar/importar grandes volumes de dados de forma periódica usando Data Loader ou integradores como MuleSoft.</li>
-        <li><strong>Requisição‑Resposta:</strong> Callouts síncronos para serviços externos (por exemplo, obter status de implementação de um projeto).</li>
-        <li><strong>Event Driven:</strong> Usar Platform Events e Change Data Capture para transmitir alterações em tempo real para outros sistemas.</li>
-        <li><strong>Remote Process Invocation:</strong> Utilizar External Services e Flow Builder para orquestrar chamadas a APIs externas sem código.</li>
+        <li>Modelagem de dados: Master‑Detail versus Lookup e impactos em compartilhamento.</li>
+        <li>Flow Builder: tipos Autolaunched, Record‑Triggered e Screen Flows.</li>
+        <li>Relatórios & Dashboards: tipos tabular, summary, matrix e joined.</li>
+        <li>Importação e exportação de dados: Data Loader, Import Wizard e Data Import Wizard.</li>
+      </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Criar um Flow record‑triggered em Project que verifica: EndDate + 7 dias &lt; Hoje AND Status != Completed → Atualizar Status = Completed.</li>
+        <li>Criar um relatório de projetos “In Progress” agrupado por ClientName.</li>
+        <li>Agendar um dashboard semanal para exibir a contagem de projetos por status.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Quando usar Master‑Detail em vez de Lookup? Qual tipo de relatório usar para comparar dados de dois objetos?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Modificar o Flow para enviar um alerta por email ao proprietário antes da atualização.</li>
+        <li>Importar 50 registros de Project via Data Loader a partir de um arquivo CSV.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>Ferramentas de Integração</h2>
-      <p>A Salesforce fornece e integra com diversas ferramentas para simplificar
-        integrações complexas.</p>
+      <h2>Nível Avançado</h2>
+      <p><strong>Explicação:</strong> Apex e APIs permitem integrações complexas e lógica avançada, essenciais para atender requisitos específicos de negócio.</p>
+      <p><strong>Caso de uso:</strong> Consumir uma API externa que retorna o status de implementação de um projeto e gravar no campo ExternalStatus__c de Project.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li><strong>MuleSoft:</strong> Plataforma de integração que conecta Salesforce a aplicações on‑premise e SaaS via API‑led connectivity.</li>
-        <li><strong>Salesforce Connect:</strong> Permite acessar dados externos em tempo real via objetos externos, reduzindo a necessidade de armazenamento.</li>
-        <li><strong>Heroku:</strong> Use para construir microsserviços e aplicativos complementares que se conectam ao Salesforce via Heroku Connect.</li>
-        <li><strong>Data Cloud:</strong> Anteriormente CDP, unifica dados de várias fontes para criar um perfil único de cliente, facilitando integrações multi‑canal.</li>
+        <li>Apex Triggers & Classes: estrutura, variáveis de contexto e bulkificação.</li>
+        <li>Testes unitários: uso de @isTest, Test.startTest() e exigência de cobertura mínima de 75%.</li>
+        <li>SOQL & SOSL avançados: consultas com agregações e subqueries.</li>
+        <li>APIs REST/SOAP: autenticação OAuth, Named Credentials e callouts HTTP.</li>
+        <li>DevOps: Salesforce DX, CLI e versionamento de metadata com Git.</li>
       </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Escrever um Trigger after insert em Project que cria uma Task “Follow Up” com due date = StartDate + 7 dias.</li>
+        <li>Implementar uma classe Apex para callout REST a um endpoint fictício, atualizando o campo ExternalStatus__c.</li>
+        <li>Criar testes unitários cobrindo cenários de sucesso e falha.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> O que é bulkification e por que é essencial em triggers? Qual a diferença entre callouts síncronos e assíncronos?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Criar um Batch Apex para atualizar o status de projetos vencidos.</li>
+        <li>Configurar uma Named Credential para autenticação OAuth em um serviço externo.</li>
+      </ul>
+
+      <h3>Padrões de Integração e Ferramentas</h3>
+      <p>Além das técnicas de desenvolvimento, integrações multi‑cloud empregam diversos padrões e ferramentas:</p>
+      <ul>
+        <li><strong>Processo Batch:</strong> Exportar/importar dados em volume via Data Loader ou integradores como MuleSoft.</li>
+        <li><strong>Requisição‑Resposta:</strong> Callouts síncronos para serviços externos.</li>
+        <li><strong>Event Driven:</strong> Platform Events e Change Data Capture para transmitir alterações em tempo real.</li>
+        <li><strong>Remote Process Invocation:</strong> Uso de External Services e Flow Builder para orquestrar APIs externas sem código.</li>
+        <li><strong>MuleSoft e Salesforce Connect:</strong> Integrações via middleware e objetos externos.</li>
+        <li><strong>Heroku & Data Cloud:</strong> Construção de microsserviços e unificação de dados de múltiplas fontes.</li>
+      </ul>
+      <p>Boas práticas incluem escrever código Apex bulkificado, usar Named Credentials para centralizar autenticações, planejar deploys com pipelines CI/CD e documentar endpoints e fluxos de dados.</p>
     </div>
 
     <div class="card">
-      <h2>Boas Práticas de Desenvolvimento</h2>
-      <p>Independente da nuvem, algumas boas práticas garantem que integrações e customizações sejam escaláveis.</p>
+      <h2>Nível Especialista/Consultor</h2>
+      <p><strong>Explicação:</strong> Projetar soluções escaláveis exige governança, estratégias de CI/CD e cuidado com segurança e compliance.</p>
+      <p><strong>Caso de uso:</strong> Implantação global de uma org única para uma empresa com 10 divisões, cada uma com regras de acesso específicas.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li>Escreva código Apex bulkificado e testado, evitando SOQL em loops e respeitando limites de governança.</li>
-        <li>Utilize frameworks de Trigger para centralizar lógica e evitar recursões.</li>
-        <li>Planeje e automatize deploys com Salesforce DX e pipelines CI/CD (por exemplo, GitHub Actions ou GitLab CI).</li>
-        <li>Mantenha documentação clara de endpoints, fluxos de dados e credenciais.</li>
+        <li>Padrões Multi‑org: integração federada, arquitetura de namespaces e isolamento de dados.</li>
+        <li>Governança & DevOps: comparação de Change Sets com pipelines CI/CD usando Salesforce DX e SFDX.</li>
+        <li>Segurança & Compliance: Shield Platform Encryption, Event Monitoring e Field Audit Trail.</li>
+        <li>Estrategias de adoção: treinamento de usuários e gestão da mudança.</li>
       </ul>
-    </div>
-    <div class="card">
-      <h2>Recursos Complementares</h2>
-      <p>Para aprender mais sobre integrações:</p>
+      <p><strong>Hands‑on Lab / Estudo de Caso:</strong></p>
       <ul>
-        <li><a href="https://trailhead.salesforce.com/pt-BR/content/learn/modules/api_basics" target="_blank" rel="noopener">Trailhead: API Basics</a></li>
-        <li><a href="https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/" target="_blank" rel="noopener">Integration Patterns & Practices Guide</a></li>
+        <li>Definir um modelo de dados para suportar divisões de negócio isoladas dentro da mesma org.</li>
+        <li>Configurar um pipeline CI/CD simples usando SFDX para mover metadata de Dev → QA → Produção.</li>
+        <li>Utilizar Shield para criptografar o campo ClientSSN__c e validar o acesso por usuários sem permissão.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Quando usar Change Sets em vez de CI/CD? Quais tipos de dados podem ser criptografados pelo Platform Encryption?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Documentar o processo de release management em cinco sandboxes.</li>
+        <li>Configurar monitoramento de login com Event Monitoring para detecção de anomalias.</li>
       </ul>
     </div>
   </main>
