@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas Frequentes - Portal de Estudos Salesforce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand">Salesforce Study</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="sales-cloud.html">Sales Cloud</a>
+      <a href="service-cloud.html">Service Cloud</a>
+      <a href="marketing-cloud.html">Marketing Cloud</a>
+      <a href="financial-services-cloud.html">Financial Services</a>
+      <a href="integrations.html">Integrações</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="exercises.html">Exercícios</a>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>Perguntas Frequentes</h1>
+    <p>Esta seção reúne perguntas comuns sobre o ecossistema Salesforce. Clique
+      em uma pergunta para revelar a resposta.</p>
+
+    <div class="faq-item">
+      <div class="faq-question">Qual a diferença entre Profile e Permission Set?</div>
+      <div class="faq-answer">Profiles determinam o nível de acesso padrão de um usuário (permissões de objetos, campos e configurações básicas) e são obrigatórios. Permission Sets são pacotes adicionais de permissões que podem ser atribuídos a vários usuários para expandir o acesso sem alterar o perfil base.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quando devo usar Master‑Detail em vez de Lookup?</div>
+      <div class="faq-answer">Use Master‑Detail quando o registro filho não puder existir sem o registro pai e quando você precisar de roll‑up summary fields no objeto pai. Lookup é apropriado para relacionamentos opcionais ou quando os registros devem ser independentes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">O que é o Flow Builder e como ele difere do Process Builder?</div>
+      <div class="faq-answer">Flow Builder é a ferramenta declarativa mais poderosa da Salesforce para automatizar processos, permitindo criar fluxos complexos (tela, registro, autolaunched). Process Builder é uma ferramenta mais antiga focada em automações simples e está sendo gradualmente substituída pelos Flows.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Como funcionam os relatórios Joined e Matrix?</div>
+      <div class="faq-answer">Relatórios Joined combinam dados de diferentes objetos ou conjuntos de relatórios em seções horizontais distintas, enquanto os Matrix permitem agrupar dados por linhas e colunas simultaneamente, facilitando comparações cruzadas de métricas.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Qual a principal função do Data Cloud (Customer Data Platform)?</div>
+      <div class="faq-answer">O Data Cloud, anteriormente conhecido como Customer Data Platform, unifica dados de clientes de várias fontes para criar um perfil unificado. Isso permite orquestrar campanhas de marketing, vendas e serviço de forma consistente e personalizada.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Por que é importante a cobertura mínima de 75% em testes Apex?</div>
+      <div class="faq-answer">A Salesforce exige que pelo menos 75% do código Apex em uma organização esteja coberto por testes para permitir deploys em produção. Isso incentiva práticas de teste e garante que o código seja confiável e mantenha a integridade da plataforma.</div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Cloud - Portal de Estudos Salesforce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand">Salesforce Study</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="sales-cloud.html" class="active">Sales Cloud</a>
+      <a href="service-cloud.html">Service Cloud</a>
+      <a href="marketing-cloud.html">Marketing Cloud</a>
+      <a href="financial-services-cloud.html">Financial Services</a>
+      <a href="integrations.html">Integrações</a>
+      <a href="faq.html">FAQ</a>
+      <a href="exercises.html">Exercícios</a>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>Sales Cloud</h1>
+    <p>A Sales Cloud é a solução de automação de vendas da Salesforce. Nesta página
+      você encontrará uma visão geral dos níveis de estudo e os principais tópicos
+      para alcançar domínio completo da nuvem de vendas.</p>
+
+    <div class="card">
+      <h2>Nível Iniciante</h2>
+      <p>O nível introdutório aborda os fundamentos do ciclo de vendas e a
+        configuração inicial da Sales Cloud.</p>
+      <ul>
+        <li>Conceitos básicos: leads, oportunidades, contas e contatos.</li>
+        <li>Configuração de Web‑to‑Lead e regras de atribuição para roteamento de leads.</li>
+        <li>Uso de Process Builder ou Flow para converter leads qualificados em oportunidades.</li>
+        <li>Customização de layouts e campos principais como Stage, Amount e Close Date.</li>
+        <li>Exercícios: relatórios de leads por fonte, criação de ações rápidas para oportunidades.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Nível Intermediário</h2>
+      <p>Expandindo a automação de vendas e recursos de previsão.</p>
+      <ul>
+        <li>Process Builder vs. Flow: quando usar cada um para atualizar registros e enviar notificações.</li>
+        <li>Processos de aprovação para descontos especiais e acompanhamento de grandes valores.</li>
+        <li>Forecasting: quotas, territórios e relatórios de previsão.</li>
+        <li>Joined e Matrix Reports para comparar pipelines versus vendas realizadas.</li>
+        <li>Exercícios: dashboards dinâmicos, flows de atualização automática de dias no estágio.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Nível Avançado</h2>
+      <p>Desenvolvimento e integrações para processos de vendas corporativos.</p>
+      <ul>
+        <li>Apex Triggers bem definidos, com bulkification e contexto adequado.</li>
+        <li>Batch, Queueable e Schedulable para processamento assíncrono de grandes volumes.</li>
+        <li>Integração com sistemas externos via REST/SOAP utilizando Named Credentials e Auth Providers.</li>
+        <li>Configuração de CPQ Light (produtos, bundles e regras de preço) se disponível.</li>
+        <li>Exercícios: desenvolvimento de LWC que exibe dados de oportunidade, migração de triggers para Queueable.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Nível Especialista/Consultor</h2>
+      <p>Projeto de arquiteturas de vendas em escala, segurança e governança.</p>
+      <ul>
+        <li>Gestão de territórios (Territory Management 2.0) e segurança avançada (OWD, sharing rules, Apex sharing).</li>
+        <li>Estratégias de implantação usando Salesforce DX, pacotes desbloqueados e pipelines CI/CD.</li>
+        <li>Design para grandes volumes de dados: skinny tables, queries seletivas e indexação.</li>
+        <li>Uso de Platform Encryption para campos sensíveis como comissões.</li>
+        <li>Exercícios: modelagem de territórios, criação de pacotes e rollback via CLI.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Recursos Complementares</h2>
+      <p>Para aprofundar seu estudo sobre Sales Cloud, consulte:</p>
+      <ul>
+        <li><a href="https://trailhead.salesforce.com/pt-BR/content/learn/trails/sell-lightning-platform" target="_blank" rel="noopener">Trailhead: Sales Cloud Basics</a></li>
+        <li><a href="https://help.salesforce.com/s/articleView?id=sf.sales.pdf_sales_cloud_basics.htm" target="_blank" rel="noopener">Documentação Salesforce</a></li>
+      </ul>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

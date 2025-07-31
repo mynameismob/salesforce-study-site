@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrações Salesforce - Portal de Estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand">Salesforce Study</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="sales-cloud.html">Sales Cloud</a>
+      <a href="service-cloud.html">Service Cloud</a>
+      <a href="marketing-cloud.html">Marketing Cloud</a>
+      <a href="financial-services-cloud.html">Financial Services</a>
+      <a href="integrations.html" class="active">Integrações</a>
+      <a href="faq.html">FAQ</a>
+      <a href="exercises.html">Exercícios</a>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>Integrações e Desenvolvimento Multi‑Cloud</h1>
+    <p>A Salesforce é uma plataforma extensível que se conecta facilmente a sistemas
+      externos. Esta seção resume os principais conceitos de integração e
+      desenvolvimento que aparecem em várias nuvens do nosso plano de estudo.</p>
+
+    <div class="card">
+      <h2>APIs e Named Credentials</h2>
+      <p>Para integrar o Salesforce com outros sistemas, você pode utilizar
+        diferentes APIs (REST, SOAP, Bulk) e criar autenticações seguras via
+        Named Credentials.</p>
+      <ul>
+        <li>Use Apex para realizar callouts HTTP em classes e triggers. Sempre separe lógica de callout em classes reutilizáveis.</li>
+        <li>Configure Named Credentials para armazenar URLs e credenciais de autenticação, facilitando a manutenção e segurança.</li>
+        <li>Quando lidar com grandes volumes de dados, considere a API Bulk e os limites de consumo.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Padrões de Integração</h2>
+      <p>Diferentes padrões servem a diferentes casos de uso. Escolha o padrão
+        adequado considerando volume, latência e consistência.</p>
+      <ul>
+        <li><strong>Processo Batch:</strong> Exportar/importar grandes volumes de dados de forma periódica usando Data Loader ou integradores como MuleSoft.</li>
+        <li><strong>Requisição‑Resposta:</strong> Callouts síncronos para serviços externos (por exemplo, obter status de implementação de um projeto).</li>
+        <li><strong>Event Driven:</strong> Usar Platform Events e Change Data Capture para transmitir alterações em tempo real para outros sistemas.</li>
+        <li><strong>Remote Process Invocation:</strong> Utilizar External Services e Flow Builder para orquestrar chamadas a APIs externas sem código.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Ferramentas de Integração</h2>
+      <p>A Salesforce fornece e integra com diversas ferramentas para simplificar
+        integrações complexas.</p>
+      <ul>
+        <li><strong>MuleSoft:</strong> Plataforma de integração que conecta Salesforce a aplicações on‑premise e SaaS via API‑led connectivity.</li>
+        <li><strong>Salesforce Connect:</strong> Permite acessar dados externos em tempo real via objetos externos, reduzindo a necessidade de armazenamento.</li>
+        <li><strong>Heroku:</strong> Use para construir microsserviços e aplicativos complementares que se conectam ao Salesforce via Heroku Connect.</li>
+        <li><strong>Data Cloud:</strong> Anteriormente CDP, unifica dados de várias fontes para criar um perfil único de cliente, facilitando integrações multi‑canal.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Boas Práticas de Desenvolvimento</h2>
+      <p>Independente da nuvem, algumas boas práticas garantem que integrações e customizações sejam escaláveis.</p>
+      <ul>
+        <li>Escreva código Apex bulkificado e testado, evitando SOQL em loops e respeitando limites de governança.</li>
+        <li>Utilize frameworks de Trigger para centralizar lógica e evitar recursões.</li>
+        <li>Planeje e automatize deploys com Salesforce DX e pipelines CI/CD (por exemplo, GitHub Actions ou GitLab CI).</li>
+        <li>Mantenha documentação clara de endpoints, fluxos de dados e credenciais.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Recursos Complementares</h2>
+      <p>Para aprender mais sobre integrações:</p>
+      <ul>
+        <li><a href="https://trailhead.salesforce.com/pt-BR/content/learn/modules/api_basics" target="_blank" rel="noopener">Trailhead: API Basics</a></li>
+        <li><a href="https://developer.salesforce.com/docs/atlas.en-us.integration_patterns_and_practices.meta/integration_patterns_and_practices/" target="_blank" rel="noopener">Integration Patterns & Practices Guide</a></li>
+      </ul>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

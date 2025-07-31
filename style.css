@@ -1,0 +1,227 @@
+/*
+ * Global Stylesheet for Salesforce Study Portal
+ *
+ * This file defines the visual identity of the site using a light,
+ * modern palette. It makes heavy use of CSS variables so colours
+ * and typography can be tweaked from a single place. The layout
+ * is responsive, with content constrained to a comfortable reading
+ * width on large screens and full‑width on smaller devices. A
+ * simple navigation bar sits at the top of every page, adapting
+ * to mobile by collapsing into a hamburger menu controlled via
+ * JavaScript.
+ */
+
+/* Colour palette */
+:root {
+  --primary: #1e88e5; /* Salesforce blue */
+  --primary-dark: #1565c0;
+  --secondary: #ff9800;
+  --background: #f5f5f5;
+  --text: #333;
+  --card-bg: #fff;
+  --card-border: #e0e0e0;
+  --nav-height: 60px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+  color: #fff;
+  height: var(--nav-height);
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a.brand {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navbar .menu a:hover,
+.navbar .menu a.active {
+  color: var(--secondary);
+}
+
+/* Mobile menu toggle */
+.navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar .hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  color: var(--primary-dark);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Cards for sections */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* FAQ styles */
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.faq-question.open::after {
+  content: '-';
+}
+
+.faq-answer {
+  display: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid var(--primary);
+}
+
+/* Quiz styles */
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quiz-question {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.quiz-options {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-options li {
+  margin-bottom: 0.5rem;
+}
+
+.quiz-options input {
+  margin-right: 0.5rem;
+}
+
+.quiz-result {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar .menu.show {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+  }
+}
