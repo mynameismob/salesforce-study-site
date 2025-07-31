@@ -25,70 +25,114 @@
       <a href="exercises.html">Exercícios</a>
     </div>
   </nav>
-  <main class="container">
-    <h1>Sales Cloud</h1>
-    <p>A Sales Cloud é a solução de automação de vendas da Salesforce. Nesta página
-      você encontrará uma visão geral dos níveis de estudo e os principais tópicos
-      para alcançar domínio completo da nuvem de vendas.</p>
+    <main class="container">
+      <h1>Sales Cloud</h1>
+      <p>Sales Cloud é a plataforma de automação de vendas que gerencia todo o ciclo de vendas, da geração de leads à conversão em clientes, contas e oportunidades.  Nesta página você encontra o conteúdo completo do plano de estudo para cada nível de proficiência.</p>
 
-    <div class="card">
-      <h2>Nível Iniciante</h2>
-      <p>O nível introdutório aborda os fundamentos do ciclo de vendas e a
-        configuração inicial da Sales Cloud.</p>
-      <ul>
-        <li>Conceitos básicos: leads, oportunidades, contas e contatos.</li>
-        <li>Configuração de Web‑to‑Lead e regras de atribuição para roteamento de leads.</li>
-        <li>Uso de Process Builder ou Flow para converter leads qualificados em oportunidades.</li>
-        <li>Customização de layouts e campos principais como Stage, Amount e Close Date.</li>
-        <li>Exercícios: relatórios de leads por fonte, criação de ações rápidas para oportunidades.</li>
-      </ul>
-    </div>
+      <div class="card">
+        <h2>Nível Iniciante</h2>
+        <p><strong>Explicação:</strong> Sales Cloud fornece ferramentas para gerenciar leads, contas, contatos e oportunidades. O objetivo nesta fase é entender o ciclo de vida de um lead até se tornar uma oportunidade e configurar a nuvem para suportar o processo de vendas.</p>
+        <p><strong>Caso de uso:</strong> Uma equipe comercial quer rastrear potenciais clientes (leads), atribuir responsáveis e converter em oportunidades ao confirmar interesse.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+          <li>Lead Lifecycle: criação de leads, regras de atribuição, Web‑to‑Lead.</li>
+          <li>Gerenciamento de Oportunidades: etapas (stages), probabilidade e datas de fechamento.</li>
+          <li>Modelo de Contas e Contatos: Person Accounts versus Business Accounts e hierarquias.</li>
+          <li>Record Types e Page Layouts: personalização da experiência por perfil.</li>
+        </ul>
+        <p><strong>Hands‑on Lab:</strong></p>
+        <ul>
+          <li>Ativar Web‑to‑Lead e gerar um formulário HTML de exemplo. Publicar em um site de teste e validar criação de leads.</li>
+          <li>Criar regra de atribuição de leads para roteamento automático para vendedores.</li>
+          <li>Construir um Process Builder ou Flow que converta leads com o campo <em>Interested__c</em> = verdadeiro em oportunidades.</li>
+          <li>Customizar o Page Layout de Oportunidades com campos Stage, Amount e Close Date.</li>
+        </ul>
+        <p><strong>Testes de Conhecimento:</strong> Explique a diferença entre Lead e Opportunity. Quando usar Record Type em vez de apenas Page Layout?</p>
+        <p><strong>Exercícios Práticos:</strong></p>
+        <ul>
+          <li>Criar relatório de leads por fonte e agendar envio diário para a gerência.</li>
+          <li>Configurar um Quick Action para criar uma oportunidade diretamente na página de Account.</li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Nível Intermediário</h2>
-      <p>Expandindo a automação de vendas e recursos de previsão.</p>
-      <ul>
-        <li>Process Builder vs. Flow: quando usar cada um para atualizar registros e enviar notificações.</li>
-        <li>Processos de aprovação para descontos especiais e acompanhamento de grandes valores.</li>
-        <li>Forecasting: quotas, territórios e relatórios de previsão.</li>
-        <li>Joined e Matrix Reports para comparar pipelines versus vendas realizadas.</li>
-        <li>Exercícios: dashboards dinâmicos, flows de atualização automática de dias no estágio.</li>
-      </ul>
-    </div>
+      <div class="card">
+        <h2>Nível Intermediário</h2>
+        <p><strong>Explicação:</strong> As ferramentas de automação e previsão permitem escalar processos de vendas e obter insights em tempo real.</p>
+        <p><strong>Caso de uso:</strong> A meta mensal exige alertas automáticos quando oportunidades de alto valor são criadas.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+          <li>Process Builder vs Flow: quando escolher cada um para atualizar campos e enviar notificações.</li>
+          <li>Processos de aprovação: fluxos de aprovação para descontos e condições especiais.</li>
+          <li>Forecasting: quotas, gerenciamento de territórios e ajustes manuais.</li>
+          <li>Joined e Matrix Reports: análise comparativa de pipeline versus vendas realizadas.</li>
+        </ul>
+        <p><strong>Hands‑on Lab:</strong></p>
+        <ul>
+          <li>Criar um processo de aprovação para descontos superiores a 20% em oportunidades.</li>
+          <li>Modelar um Flow para postar mensagem no Chatter quando uma Opportunity maior que R$100k é criada.</li>
+          <li>Montar um Joined Report combinando dados de Opportunities e Orders.</li>
+        </ul>
+        <p><strong>Testes de Conhecimento:</strong> Quando escolher Flow em vez de Process Builder? Como as quotas são atribuídas no Territory Management?</p>
+        <p><strong>Exercícios Práticos:</strong></p>
+        <ul>
+          <li>Configurar um Dashboard dinâmico exibindo pipeline por região.</li>
+          <li>Criar um Flow que atualize diariamente o campo DaysInStage.</li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Nível Avançado</h2>
-      <p>Desenvolvimento e integrações para processos de vendas corporativos.</p>
-      <ul>
-        <li>Apex Triggers bem definidos, com bulkification e contexto adequado.</li>
-        <li>Batch, Queueable e Schedulable para processamento assíncrono de grandes volumes.</li>
-        <li>Integração com sistemas externos via REST/SOAP utilizando Named Credentials e Auth Providers.</li>
-        <li>Configuração de CPQ Light (produtos, bundles e regras de preço) se disponível.</li>
-        <li>Exercícios: desenvolvimento de LWC que exibe dados de oportunidade, migração de triggers para Queueable.</li>
-      </ul>
-    </div>
+      <div class="card">
+        <h2>Nível Avançado</h2>
+        <p><strong>Explicação:</strong> Desenvolvimento e integrações elevam o Sales Cloud a sistemas corporativos, permitindo lógica customizada e sincronização de dados externos.</p>
+        <p><strong>Caso de uso:</strong> Sincronizar oportunidades com um ERP via API para criar registros de faturamento automaticamente.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+          <li>Apex Triggers: bulkification, variáveis de contexto e boas práticas.</li>
+          <li>Batch Apex, Queueable e Schedulable: processamento de grandes volumes em jobs agendados.</li>
+          <li>Named Credentials e Auth Providers: configurar OAuth para callouts REST.</li>
+          <li>CPQ Light: produtos, bundles e regras de preço (se a funcionalidade estiver disponível).</li>
+        </ul>
+        <p><strong>Hands‑on Lab:</strong></p>
+        <ul>
+          <li>Escrever um Trigger after update em Opportunity que faça um HTTP callout REST ao ERP para criar uma ordem de faturamento.</li>
+          <li>Configurar Named Credential e Auth Provider para autenticação OAuth com o sistema externo.</li>
+          <li>Implementar um Batch Apex para revalidar oportunidades semanalmente.</li>
+          <li>Criar testes unitários com uso de HTTP mock para callouts.</li>
+        </ul>
+        <p><strong>Testes de Conhecimento:</strong> O que é bulkification e por que é essencial em triggers? Quais os limites de callout e como mitigá-los?</p>
+        <p><strong>Exercícios Práticos:</strong></p>
+        <ul>
+          <li>Desenvolver um componente LWC que exiba dados de Opportunity usando @wire Apex.</li>
+          <li>Ajustar um Trigger para usar Queueable Apex e evitar limites de tempo.</li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Nível Especialista/Consultor</h2>
-      <p>Projeto de arquiteturas de vendas em escala, segurança e governança.</p>
-      <ul>
-        <li>Gestão de territórios (Territory Management 2.0) e segurança avançada (OWD, sharing rules, Apex sharing).</li>
-        <li>Estratégias de implantação usando Salesforce DX, pacotes desbloqueados e pipelines CI/CD.</li>
-        <li>Design para grandes volumes de dados: skinny tables, queries seletivas e indexação.</li>
-        <li>Uso de Platform Encryption para campos sensíveis como comissões.</li>
-        <li>Exercícios: modelagem de territórios, criação de pacotes e rollback via CLI.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Recursos Complementares</h2>
-      <p>Para aprofundar seu estudo sobre Sales Cloud, consulte:</p>
-      <ul>
-        <li><a href="https://trailhead.salesforce.com/pt-BR/content/learn/trails/sell-lightning-platform" target="_blank" rel="noopener">Trailhead: Sales Cloud Basics</a></li>
-        <li><a href="https://help.salesforce.com/s/articleView?id=sf.sales.pdf_sales_cloud_basics.htm" target="_blank" rel="noopener">Documentação Salesforce</a></li>
-      </ul>
-    </div>
-  </main>
+      <div class="card">
+        <h2>Nível Especialista/Consultor</h2>
+        <p><strong>Explicação:</strong> Arquiteturas de vendas corporativas exigem design do modelo de dados, regras de compartilhamento e governança de deploy.</p>
+        <p><strong>Caso de uso:</strong> Implantação em uma grande empresa com divisões de vendas independentes, cada uma com regras de acesso e territórios próprios.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+          <li>Territory Management 2.0: regras de atribuição de contas e territórios sobrepostos.</li>
+          <li>Modelo de Segurança: OWD, regras de compartilhamento e Apex sharing.</li>
+          <li>Release Management: Salesforce DX, pacotes desbloqueados e pipelines CI/CD.</li>
+          <li>Estrategias para grandes volumes de dados: skinny tables, queries seletivas e indexação.</li>
+          <li>Uso do Platform Encryption para campos sensíveis (ex.: Commission__c).</li>
+        </ul>
+        <p><strong>Hands‑on Lab:</strong></p>
+        <ul>
+          <li>Modelar três divisões de vendas usando Territory Management, definindo regras de atribuição de contas.</li>
+          <li>Configurar um pipeline CI/CD em GitHub Actions com SFDX para deploy entre ambientes (Dev → QA → Prod).</li>
+          <li>Aplicar Platform Encryption a um campo sensível e validar acesso por perfis sem permissão.</li>
+          <li>Documentar as configurações de compartilhamento e a hierarquia de papéis em um diagrama.</li>
+        </ul>
+        <p><strong>Testes de Conhecimento:</strong> Como o Territory Management difere da Role Hierarchy? Quais tipos de campo podem ser criptografados pela Platform Encryption?</p>
+        <p><strong>Exercícios Práticos:</strong></p>
+        <ul>
+          <li>Criar um pacote desbloqueado para metadados customizados e testar o deploy em uma org de QA.</li>
+          <li>Simular rollback de mudanças usando a CLI do Salesforce DX.</li>
+        </ul>
+      </div>
+    </main>
   <script src="script.js"></script>
 </body>
 </html>
