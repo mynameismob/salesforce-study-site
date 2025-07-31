@@ -1,0 +1,156 @@
+://github.com/mynameismob/salesforce-study-site/new/main
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Cloud Engagement - Portal de Estudos Salesforce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <a href="index.html" class="brand">Salesforce Study</a>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="sales-cloud.html">Sales Cloud</a>
+        <a href="service-cloud.html">Service Cloud</a>
+        <a href="marketing-cloud-engagement.html" class="active">Marketing Cloud</a>
+        <a href="financial-services-cloud.html">Financial Services</a>
+        <a href="integrations.html">Integrações</a>
+        <a href="faq.html">FAQ</a>
+        <a href="exercises.html">Exercícios</a>
+        <a href="trilhas.html">Trilhas</a>
+        <a href="certificacoes.html">Certificações</a>
+        <a href="recursos.html">Recursos</a>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar no portal...">
+        <ul id="search-results"></ul>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Marketing Cloud Engagement</h1>
+    <p>O Salesforce Marketing Cloud Engagement é a plataforma de marketing digital omnicanal da Salesforce. Ela permite planejar, executar e otimizar campanhas de marketing em múltiplos canais – email, SMS, push, redes sociais, web e publicidade – a partir de uma visão unificada do cliente. Esta página apresenta um guia completo de estudo, organizado por níveis de dificuldade, para apoiar a sua jornada rumo às certificações e práticas avançadas.</p>
+
+    <!-- Nível Iniciante -->
+    <div class="card">
+        <h2 id="nivel-iniciante">Nível Iniciante</h2>
+        <p><strong>Explicação:</strong> Nesta etapa você aprenderá a base do Marketing Cloud: entender o modelo de dados de contatos, criar listas e Data Extensions, segmentar assinantes e construir emails personalizados e responsivos.</p>
+        <p><strong>Caso de uso:</strong> Onboarding de um novo assinante: assim que alguém se cadastra na newsletter, envie um email de boas‑vindas personalizado e adicione-o a um segmento adequado.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+            <li>Modelo de dados: Subscriber Key vs Contact Key, Listas x Data Extensions e criação de Attribute Groups.</li>
+            <li>Email Studio e Content Builder: templates, blocos de conteúdo, strings de personalização e conteúdo dinâmico básico.</li>
+            <li>Segmentação e assinaturas: filtros, criação de listas, regras de subscription e práticas de entregabilidade (opt‑in, opt‑out, CAN-SPAM).</li>
+            <li>Contact Builder: criação e importação de Data Extensions, uso do Data Designer para mapear relacionamentos.</li>
+        </ul>
+        <p><strong>Hands‑on / Labs:</strong></p>
+        <ul>
+            <li>Configurar o Contact Builder e criar uma Data Extension “Newsletter_Subscribers” com campos SubscriberKey, EmailAddress, FirstName e PreferredCategory.</li>
+            <li>Importar contatos via CSV para a Data Extension e criar filtros simples de segmentação.</li>
+            <li>Criar um email de boas‑vindas no Content Builder com personalização %%FirstName%% e links de preferências.</li>
+            <li>Programar um envio de teste e analisar as métricas de abertura e cliques no Email Studio.</li>
+        </ul>
+        <p><strong>Testes de conhecimento & Exercícios:</strong></p>
+        <ul>
+            <li>Explique quando usar Subscriber Key e quando usar Contact Key.</li>
+            <li>Crie uma segmentação que encontre assinantes que não abriram os últimos 3 envios.</li>
+            <li>Demonstre como garantir conformidade de opt‑in e inserir um link de descadastramento nos emails.</li>
+        </ul>
+    </div>
+
+    <!-- Nível Intermediário -->
+    <div class="card">
+        <h2 id="nivel-intermediario">Nível Intermediário</h2>
+        <p><strong>Explicação:</strong> Você passa a orquestrar comunicações contínuas e multicanal usando Automation Studio e Journey Builder. Aprende a processar dados em escala, definir entradas de jornada e ramificações condicionais.</p>
+        <p><strong>Caso de uso:</strong> Conduzir leads ao longo de uma jornada de boas‑vindas: importar leads diariamente, enviar email inicial, aguardar alguns dias, enviar SMS de lembrete e seguir caminhos diferentes conforme a interação.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+            <li>Automation Studio: atividades de Import File, Filter, SQL Query e Email Send, além de tarefas de Data Extract e File Transfer.</li>
+            <li>Journey Builder: fontes de entrada (Data Extensions, API Events), atividades (send email, SMS, push, advertising, waits, decisions) e interação com Sales Cloud via Marketing Cloud Connect.</li>
+            <li>SQL e segmentação avançada: escrever queries em Data Extensions e usar Data Views para acompanhar engajamento.</li>
+            <li>Integração básica com Mobile Studio (SMS e Push) e Advertising Studio.</li>
+        </ul>
+        <p><strong>Hands‑on / Labs:</strong></p>
+        <ul>
+            <li>Criar uma automação no Automation Studio que importa novos leads de um FTP, grava numa Data Extension e inicia uma jornada.</li>
+            <li>Construir uma jornada de boas‑vindas no Journey Builder com e‑mails, waits, decision splits e envio de SMS via MobileConnect.</li>
+            <li>Escrever uma Query Activity para separar contatos ativos e inativos com base em Data Views.</li>
+            <li>Utilizar o Marketing Cloud Connect para sincronizar leads da Sales Cloud e mapear um campo customizado.</li>
+        </ul>
+        <p><strong>Testes de conhecimento & Exercícios:</strong></p>
+        <ul>
+            <li>Quando usar uma atividade SQL Query em vez de um Data Filter? Explique as diferenças e limites.</li>
+            <li>Desenhe um fluxograma de jornada com dois caminhos, um para quem clicou no email inicial e outro para quem não clicou.</li>
+            <li>Crie uma automação que exporte uma Data Extension para o FTP todas as sextas‑feiras.</li>
+        </ul>
+    </div>
+
+    <!-- Nível Avançado -->
+    <div class="card">
+        <h2 id="nivel-avancado">Nível Avançado</h2>
+        <p><strong>Explicação:</strong> Aprofunde‑se em scripting, APIs e recursos de inteligência. Você irá personalizar conteúdo com AMPscript e SSJS, usar APIs REST/SOAP para integrações em tempo real e explorar recursos de IA como Einstein.</p>
+        <p><strong>Caso de uso:</strong> Disparar emails transacionais a partir de eventos de compra no e‑commerce com conteúdo de recomendação de produtos alimentado por IA e dados externos.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+            <li>AMPscript e SSJS: funções de lookup, lógica condicional, criação de blocos dinâmicos e scripts em Server‑Side JavaScript para automações.</li>
+            <li>APIs do Marketing Cloud: REST e SOAP para envio de Triggered Sends, criação de contatos, consultas de Data Extensions e autenticação via OAuth.</li>
+            <li>Data Views e relatórios: uso avançado de consultas para analisar comportamento (opens, clicks, bounces) e construir dashboards.</li>
+            <li>Einstein Engagement Scoring e Send Time Optimization: configurar e interpretar pontuações preditivas e horários otimizados.</li>
+            <li>Integração com sistemas externos via API ou middleware (ex.: capturar eventos de e‑commerce e disparar um email transacional).</li>
+        </ul>
+        <p><strong>Hands‑on / Labs:</strong></p>
+        <ul>
+            <li>Criar um email com bloco de recomendação de produtos usando AMPscript que consulta uma Data Extension de catálogo.</li>
+            <li>Escrever uma Query Activity que combine dados de Data Views para identificar assinantes com alto engajamento.</li>
+            <li>Configurar um Triggered Send via REST API e testar o envio com Postman.</li>
+            <li>Ativar o Einstein Send Time Optimization em uma jornada e analisar os resultados.</li>
+        </ul>
+        <p><strong>Testes de conhecimento & Exercícios:</strong></p>
+        <ul>
+            <li>Diferencie Triggered Send, User‑Initiated Send e Journey Send.</li>
+            <li>Escreva um snippet de AMPscript que exibe um desconto de 10% para assinantes VIP.</li>
+            <li>Explique como autenticar e fazer uma chamada REST API para criar um contato no Marketing Cloud.</li>
+        </ul>
+    </div>
+
+    <!-- Nível Especialista / Consultor -->
+    <div class="card">
+        <h2 id="nivel-especialista">Nível Especialista/Consultor</h2>
+        <p><strong>Explicação:</strong> Neste nível, você age como estrategista. Entende como unir várias nuvens Salesforce, alavancar IA e personalização em escala, e desenhar arquiteturas de marketing omnicanal robustas para milhões de contatos.</p>
+        <p><strong>Caso de uso:</strong> Lançar um novo produto com uma campanha integrada que inclui email, SMS, push, anúncios e redes sociais, utilizando Data Cloud para unificar perfis e Einstein Content Selection para recomendações.</p>
+        <p><strong>Tópicos teóricos:</strong></p>
+        <ul>
+            <li>Marketing Cloud Connect e Data Cloud (Customer 360 Data Platform) para sincronização com Sales/Service Cloud e unificação de perfis.</li>
+            <li>Advertising Studio, Social Studio e MobilePush: criação de audiências, lookalikes e execução de campanhas em canais pagos e sociais.</li>
+            <li>Interaction Studio (Personalization) e Web Marketing: personalização em tempo real de sites e aplicativos, integração com dados comportamentais.</li>
+            <li>Einstein: Content Selection, Recommendations e AI generativa para criar conteúdo e determinar o próximo melhor passo.</li>
+            <li>Arquitetura e governança: design de soluções multicloud, gestão de volume de dados (milhões de contatos), privacidade, compliance e melhores práticas de deploy.</li>
+        </ul>
+        <p><strong>Hands‑on / Labs:</strong></p>
+        <ul>
+            <li>Configurar o Marketing Cloud Connect para sincronizar Leads e Contacts da Sales Cloud.</li>
+            <li>Criar uma audiência no Advertising Studio e executar uma campanha de lookalike no Facebook.</li>
+            <li>Configurar regras de Einstein Content Selection para recomendações dinâmicas em emails e landing pages.</li>
+            <li>Implementar uma jornada multicanal com fallback: por exemplo, se um email não for aberto, enviar uma notificação push ou SMS.</li>
+            <li>Usar o Web Analytics Connector para capturar dados de navegação no site e personalizar interações subsequentes.</li>
+        </ul>
+        <p><strong>Testes de conhecimento & Exercícios:</strong></p>
+        <ul>
+            <li>Quais considerações arquiteturais são necessárias para suportar campanhas para 5 milhões de contatos?</li>
+            <li>Descreva como o Data Cloud unifica perfis de clientes e como isso se integra ao Marketing Cloud.</li>
+            <li>Projete um fluxo de jornada que utilize email, push, SMS e anúncios pagos com base em comportamento de compra.</li>
+            <li>Documente a arquitetura de uma campanha omnicanal com fluxograma e explique cada etapa.</li>
+        </ul>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
