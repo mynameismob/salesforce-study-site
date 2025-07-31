@@ -27,63 +27,109 @@
   </nav>
   <main class="container">
     <h1>Service Cloud</h1>
-    <p>O Service Cloud é a solução de atendimento ao cliente da Salesforce. Abaixo
-      estão os principais tópicos de estudo divididos por níveis.</p>
+    <p>Service Cloud é a solução completa da Salesforce para atendimento ao cliente, integrando múltiplos canais e automação de processos. A seguir estão os detalhes do plano de estudo, aprofundados por nível de proficiência.</p>
 
     <div class="card">
       <h2>Nível Iniciante</h2>
-      <p>Fundamentos de atendimento e gestão de casos.</p>
+      <p><strong>Explicação:</strong> Casos representam solicitações de atendimento; entitlements e milestones definem SLAs; o Service Console unifica todas as ferramentas em uma única interface.</p>
+      <p><strong>Caso de uso:</strong> Uma empresa de telecom recebe chamadas, emails e chats de clientes e precisa rastrear cada solicitação em um objeto Case.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
         <li>Case Lifecycle: métodos de criação (manual, email‑to‑case, web‑to‑case), status e escalonamento.</li>
-        <li>Entitlements e Milestones: definição de SLA e ações de escalonamento automático.</li>
-        <li>Configuração do Service Console com componentes como Case Feed, History e utilitários.</li>
-        <li>Filas e regras de atribuição para roteamento eficiente de casos.</li>
-        <li>Exercícios: ativar email‑to‑case, configurar processos de escalonamento e personalizar layouts de caso.</li>
+        <li>Entitlements & Milestones: definição de períodos de SLA e ações de escalonamento automático.</li>
+        <li>Service Console: configuração de workspaces, componentes customizados e layouts compactos.</li>
+        <li>Queues & Assignment Rules: roteamento de casos para filas e perfis.</li>
+      </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Habilitar Email‑to‑Case para uma caixa de suporte e verificar a criação automática de casos.</li>
+        <li>Configurar um Entitlement Process com Milestone de resposta em 4 horas e ação de escalonamento via email ao gerente.</li>
+        <li>Ajustar a Assignment Rule para atribuir casos com prioridade alta ao grupo "Tier2_Support".</li>
+        <li>Montar um console app personalizado incluindo componentes Case Feed, History e Overview.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Qual a diferença entre Email‑to‑Case e Web‑to‑Case? Como um Milestone age quando um caso fica fora do SLA?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Criar uma fila "Escalated Cases" e adicionar uma Assignment Rule que roteie casos com status "Escalated" para essa fila.</li>
+        <li>Personalizar o Compact Layout de Case para exibir Priority, Reason e Entitlement.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Nível Intermediário</h2>
-      <p>Automação e analytics para escalar o suporte.</p>
+      <p><strong>Explicação:</strong> Automação e analytics ajudam a escalar o suporte sem aumentar o headcount, com macros e relatórios avançados.</p>
+      <p><strong>Caso de uso:</strong> A equipe de suporte deseja macros para respostas rápidas a perguntas frequentes e relatórios diários de tempo de resolução por canal.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li>Macros, Quick Actions e templates para respostas rápidas.</li>
-        <li>Configuração do Omni‑Channel para distribuição automática de casos com base em habilidades e capacidade.</li>
-        <li>Dashboards e relatórios de SLA: tempo médio de resolução por canal (telefone, email, chat).</li>
-        <li>Conhecimento (Knowledge Base) e integração com cases.</li>
-        <li>Exercícios: criar macros, habilitar Omni‑Channel e configurar relatórios e dashboards semanais.</li>
+        <li>Macros & Quick Actions: gravação de macros de ações repetitivas e implementação de Quick Actions em layouts.</li>
+        <li>Omni‑Channel: presença de agentes, roteamento baseado em habilidades e controle de carga de trabalho.</li>
+        <li>Relatórios & Dashboards de Serviço: relatórios tabulares e summary, e dashboards de métricas de SLA.</li>
+        <li>Knowledge Base: publicação e vinculação de artigos de conhecimento em casos.</li>
+      </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Configurar o Omni‑Channel com Presence Status e roteamento por habilidades (por exemplo, idioma e tempo médio).</li>
+        <li>Criar uma Macro que adiciona um comentário padrão "Obrigado por seu contato..." e encerra o caso.</li>
+        <li>Montar um relatório summary de "Avg Case Age por Channel" (Phone, Email, Chat) e publicar um dashboard com filtros de data.</li>
+        <li>Ativar a base de conhecimento e vincular artigos a casos via Quick Action.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Qual a diferença entre Decision Routing e Skills‑Based Routing no Omni‑Channel? Quando usar Summary Report versus Matrix Report para análise de casos?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Criar um Quick Action para inserir um template de artigo de conhecimento no Case Feed.</li>
+        <li>Configurar o envio semanal do dashboard de SLA ao gerente de suporte.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Nível Avançado</h2>
-      <p>Uso de inteligência artificial e automações sofisticadas.</p>
+      <p><strong>Explicação:</strong> Inteligência artificial e chatbots elevam a experiência de atendimento, classificando casos e respondendo automaticamente a perguntas frequentes.</p>
+      <p><strong>Caso de uso:</strong> Retirar carga do time humano utilizando o Einstein para classificar emails de suporte e Einstein Bots para FAQs sobre status de pedidos.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li>Einstein Case Classification para rotular casos automaticamente.</li>
-        <li>Einstein Next Best Action para recomendações contextuais durante o atendimento.</li>
-        <li>Criação e configuração de chatbots no Einstein Bots para FAQ.</li>
-        <li>Advanced Flows com subflows, invocable actions e tratamento de erros.</li>
-        <li>Exercícios: treinar modelos Einstein com dados históricos, configurar bot com intents e subflows.</li>
+        <li>Einstein Case Classification: treinamento de modelo com base em históricos de casos.</li>
+        <li>Einstein Next Best Action: recomendações contextuais para agentes durante o atendimento.</li>
+        <li>Einstein Bots: configuração de intents, diálogos e componentes customizados no bot.</li>
+        <li>Advanced Flows: uso de subflows, invocable actions e tratamento de erros em flows complexos.</li>
+      </ul>
+      <p><strong>Hands‑on Lab:</strong></p>
+      <ul>
+        <li>Treinar o Einstein Case Classification com 1000 casos históricos de duas categorias distintas.</li>
+        <li>Configurar o Einstein Next Best Action para sugerir artigos de Knowledge de acordo com o campo Case Reason.</li>
+        <li>Criar um Einstein Bot que reconheça intents "Status_Pedido" e "Abertura_2Via" e retorne informações de status via callout.</li>
+        <li>Desenvolver um subflow para enviar email ao cliente após fechamento de caso solicitando avaliação.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Qual a base mínima de dados recomendada para treinar o Einstein Case Classification? Como um Einstein Bot chama uma Apex Invocable Action?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Construir um componente LWC para uso no Bot que apresente FAQs em formato carrossel.</li>
+        <li>Integrar o bot à página Lightning Experience do Console de Serviço.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Nível Especialista/Consultor</h2>
-      <p>Arquiteturas de contact center global e compliance.</p>
+      <p><strong>Explicação:</strong> Projetar um contact center global requer resiliência, compliance e componentes customizados no console.</p>
+      <p><strong>Caso de uso:</strong> Uma multinacional deseja um contact center 24×7 distribuído em 4 regiões, com compliance GDPR e alta disponibilidade.</p>
+      <p><strong>Tópicos teóricos:</strong></p>
       <ul>
-        <li>Desenho de contact centers multi‑região, incluindo failover e alta disponibilidade.</li>
-        <li>Configuração de Shield Event Monitoring e Field Audit Trail para conformidade (GDPR, HIPAA).</li>
-        <li>Desenvolvimento de componentes customizados no Service Console para insights em tempo real.</li>
-        <li>Integração de telefonia (CTI) usando Open CTI e Softphone.</li>
-        <li>Exercícios: criar blueprint de arquitetura global, configurar criptografia e desenvolver componente Lightning para SLA.</li>
+        <li>Arquitetura de Contact Center: single org versus multi‑org, failover, disaster recovery.</li>
+        <li>Compliance & Auditing: HIPAA, GDPR, Field Audit Trail e Shield Event Monitoring.</li>
+        <li>Componentes Personalizados no Console: desenvolvimento de Lightning Components para insights em tempo real.</li>
+        <li>Integração de Telefonia: CTI adapters, Open CTI e Softphone.</li>
       </ul>
-    </div>
-
-    <div class="card">
-      <h2>Recursos Complementares</h2>
-      <p>Para expandir seu conhecimento em Service Cloud:</p>
+      <p><strong>Hands‑on Lab:</strong></p>
       <ul>
-        <li><a href="https://trailhead.salesforce.com/pt-BR/content/learn/modules/service_cloud_basics" target="_blank" rel="noopener">Trailhead: Service Cloud Basics</a></li>
-        <li><a href="https://help.salesforce.com/s/articleView?id=sf.service_cloud_overview.htm" target="_blank" rel="noopener">Guia de Introdução ao Service Cloud</a></li>
+        <li>Desenhar a arquitetura do Service Cloud para 4 regiões diferentes, detalhando failover e requisitos de data residency.</li>
+        <li>Configurar o Shield Event Monitoring para capturar todas as chamadas API e logins.</li>
+        <li>Criar um Lightning Component customizado que exiba KPIs de SLA em linha no Case Feed.</li>
+        <li>Integrar um provedor de telefonia fictício via Open CTI e adicionar um Softphone ao console.</li>
+      </ul>
+      <p><strong>Testes de Conhecimento:</strong> Quando optar por multi‑org em vez de uma org única global? Como configurar o Field Audit Trail para reter logs de casos por 5 anos?</p>
+      <p><strong>Exercícios Práticos:</strong></p>
+      <ul>
+        <li>Documentar o processo de GDPR Data Subject Request | Right to be Forgotten.</li>
+        <li>Desenvolver um blueprint de deploy CI/CD para componentes customizados do console.</li>
       </ul>
     </div>
   </main>
